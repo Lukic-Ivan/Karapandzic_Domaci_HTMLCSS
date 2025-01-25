@@ -57,6 +57,33 @@ header {
     margin-bottom: 10px;
 }
 
+.contact-text {
+    background-color: #A6D880D9;
+    padding: 20px 80px 20px 80px;
+    margin: 100px 150px 100px 150px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #FFF;
+}
+
+.contact-text * {
+    margin: 0px;
+    padding: 0px;
+}
+
+.map {
+    margin-top: 25px;
+}
+
+.contact-text h2 {
+    font-size: 1.5em;
+}
+
+.contact-text a {
+    text-decoration: underline;
+    color: #333;
+}
+
 #active {
     color: #000;
 }
@@ -149,6 +176,10 @@ footer {
     /* Accent line for separation */
 }
 
+.hamburger {
+    display: none;
+}
+
 .footer-text {
     font-size: 0.9em;
     margin-top: 10px;
@@ -199,6 +230,10 @@ footer {
     flex: 1;
 }
 
+.hamburger-logo {
+    display: none;
+}
+
 .right p {
     margin: 0;
     font-size: 2em;
@@ -231,9 +266,19 @@ footer {
     /* nav a {
         font-size: 24px;
     } */
+    .contact-text {
+        padding: 10px 40px 10px 40px;
+        margin: 20px 50px 20px 50px;
+        min-width: 400px;
+    }
 
     .container {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-text p {
+        font-size: 20px;
+        line-height: 1.8;
     }
 
     .text-section p {
@@ -270,7 +315,14 @@ footer {
     }
 }
 
+
+
 @media screen and (max-width: 1150px) {
+    .contact-text {
+        padding: 10px 40px 10px 40px;
+        margin: 50px 80px 50px 80px;
+    }
+
     .container {
         grid-template-columns: 1fr;
     }
@@ -280,6 +332,18 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        border: none;
+    }
+
+    .sub-section {
+        border: none;
+    }
+
+    .txt {
+        border: 2px solid #FFF;
+        padding: 2px;
+        border-radius: 30px;
+        margin-bottom: 25px;
     }
 
     .image-section {
@@ -315,6 +379,15 @@ footer {
         line-height: 62px;
     }
 
+    .contact-text p {
+        font-size: 14px;
+        line-height: 32px;
+    }
+
+    .contact-text a {
+        font-size: 14px;
+        line-height: 32px;
+    }
 
     .sub-section p {
         font-size: 24px;
@@ -333,5 +406,92 @@ footer {
     .right p {
         font-size: 1.4em;
         font-weight: normal;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    header {
+        height: 120px;
+    }
+
+    /* .logo {
+        display: none;
+    } */
+
+    .hamburger-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hamburger-logo img {
+        height: 200px;
+        width: 250px;
+        border-radius: 125px;
+    }
+
+    .more {
+        position: absolute;
+        right: 5px;
+        top: 35px;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        border-radius: 0px 20px 20px 0px;
+        top: 0px;
+        height: 100%;
+        /* Adjust based on header height */
+        left: 0;
+        width: 80%;
+        background-color: #0A4002;
+        padding: 10px 0;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .nav a {
+        padding: 10px 20px;
+        text-align: center;
+        border-top: 2px solid #000;
+        /* border-bottom: 1px solid #000; */
+        font-family: "Inknut Antiqua", serif;
+        font-weight: 400;
+        font-style: normal;
+        text-decoration: none;
+        font-size: 36px;
+        color: white;
+        /* font-size: 1.2em; */
+        transition: color 0.3s ease;
+        line-height: 92px;
+    }
+
+    #active {
+        color: inherit;
+    }
+
+    .nav a:last-child {
+        border-bottom: 2px solid #000;
+    }
+
+    .nav a:hover {
+        color: #FFD700;
+    }
+
+    .nav.open {
+        display: flex;
     }
 }
