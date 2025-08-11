@@ -35,39 +35,86 @@
                 <div class="hamburger-logo">
                     <img src="images/discovinlogo.png" alt="Disco Vintage Logo">
                 </div>
-                <a href="index.html">Home</a>
-                <a href="contact.html">Contact</a>
-                <a href="about.html">About Us</a>
-                <a href="booking.html">Booking</a>
+                <a href="index.html">Početna</a>
+                <a href="contact.html">Kontakt</a>
+                <a href="about.html">O nama</a>
+                <a href="booking.html">Rezervacija</a>
             </div>
         </div>
         <nav>
-            <a href="index.html">Home</a>
-            <a id="active" href="contact.html">Contact</a>
-            <a href="about.html">About Us</a>
-            <a href="booking.html">Booking</a>
+            <a id="active" href="index.html">Početna</a>
+            <a href="contact.html">Kontakt</a>
+            <a href="about.html">O nama</a>
+            <a href="booking.html">Rezervacija</a>
         </nav>
     </header>
+    <div class="side-menu">
+        <ul>
+            <li><a href="#" class="menu-link active" data-section="general">Kontaktirajte nas</a></li>
+            <li><a href="#" class="menu-link" data-section="location">Lokacija</a></li>
+            <li><a href="#" class="menu-link" data-section="lost">Izgubljeno i nadjeno</a></li>
+            <li><a href="#" class="menu-link" data-section="hours">Radno Vreme</a></li>
+        </ul>
+    </div>
     <div class="content">
         <div class="contact-text">
             <div class="txt">
-                <h2>Contact</h2>
-                <a href="mailto:support@discovintage.com">support@discovintage.com</a>
-                <h2>Main Location</h2>
-                <a href="https://maps.app.goo.gl/Vh6iiaoiJGqGQwH46">Herzogenburger straße 36, St. Pölten 3100</a>
-                <h2>Lost and Found</h2>
-                <p>Please send an email to <a href="mailto:lost@ostgut.de">lost@ostgut.de</a> with an accurate
-                    description
-                    of your lost item and date of loss.
-                </p>
-                <p>Pickup is possible only on <b>Wednesdays from 2 - 6 p.m.</b></p>
-                <div class="map"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0"
-                        marginwidth="0"
-                        src="https://maps.google.com/maps?width=100%25&amp;height=800&amp;hl=en&amp;q=Herzogenburger%20Str.%2036,%20St.Pulten,%20Austria+(Disco%20Vintage)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
-                            href="https://www.gps.ie/">gps vehicle tracker</a></iframe></div>
+                <div id="general" class="content-section active">
+                    <h2>Kontaktirajte nas</h2>
+                    <p>Možete nas kontaktirati preko mejla ili telefona:</p>
+                    <a href="mailto:support@discovintage.com">kontakt@discovintage.com</a><br>
+                    <a href="tel:+381123456789">Phone: +381 1234 56789</p>
+                </div>
+
+                <div id="location" class="content-section">
+                    <h2>Lokacija</h2>
+                    <a href="https://maps.app.goo.gl/dotBt4edPD9zeYVS6">Kosančićev venac 20, Beograd 11030</a>
+                    <div class="map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3408.8063029046843!2d20.451279999999997!3d44.81686799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDTCsDQ5JzAwLjciTiAyMMKwMjcnMDQuNiJF!5e1!3m2!1sen!2srs!4v1754949241127!5m2!1sen!2srs"
+                            width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <div id="lost" class="content-section">
+                    <h2>Izgubljeno i nadjeno</h2>
+                    <p>Posaljite mejl na <a href="mailto:support@discovintage.com">kontakt@discovintage.com</a> opis
+                        izgubljene stvari i datum gubitka.</p>
+                    <p>Preuzimanje je moguće samo <b>Sredom od 2 - 6 posle podne</b></p>
+                </div>
+
+                <div id="hours" class="content-section">
+                    <h2>Radno vreme</h2>
+                    <p><strong>Četvrtak - Subota:</strong> 10:00 PM - 06:00 AM</p>
+                    <p><strong>Nedelja - Sreda:</strong> Zatvoreno</p>
+                    <p><strong>Specijalni događaji</strong> U kalendaru na pocetnoj mozete pogledati radno vreme</p>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuLinks = document.querySelectorAll('.menu-link');
+            const sections = document.querySelectorAll('.content-section');
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Remove active class from all links and sections
+                    menuLinks.forEach(l => l.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    // Add active class to clicked link and corresponding section
+                    this.classList.add('active');
+                    const sectionId = this.getAttribute('data-section');
+                    document.getElementById(sectionId).classList.add('active');
+                });
+            });
+        });
+    </script>
     <footer>
         <div class="footer-text">
             © 2025 Vintage Disco | All rights reserved.

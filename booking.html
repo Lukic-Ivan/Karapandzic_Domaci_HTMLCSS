@@ -35,37 +35,57 @@
                 <div class="hamburger-logo">
                     <img src="images/discovinlogo.png" alt="Disco Vintage Logo">
                 </div>
-                <a href="index.html">Home</a>
-                <a href="contact.html">Contact</a>
-                <a href="about.html">About Us</a>
-                <a href="booking.html">Booking</a>
+                <a href="index.html">Početna</a>
+                <a href="contact.html">Kontakt</a>
+                <a href="about.html">O nama</a>
+                <a href="booking.html">Rezervacija</a>
             </div>
         </div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About Us</a>
-            <a id="active" href="booking.html">Booking</a>
+            <a id="active" href="index.html">Početna</a>
+            <a href="contact.html">Kontakt</a>
+            <a href="about.html">O nama</a>
+            <a href="booking.html">Rezervacija</a>
         </nav>
     </header>
     <div class="content">
         <div class="text-section booking">
-            <h2>Don't be late — grab the best seats at Vintage Disco!</h2>
+            <h2>Nemojte zakasniti uzmite najbolje karte!</h2>
             <h1>Booking form</h1>
             <form class="booking-form">
-                <label for="name">Your Name and Surname*</label>
+                <label for="name">Ime*</label>
                 <input type="text" id="name" name="name" required>
 
-                <label for="email">Your email*</label>
+                <label for="email">Mejl*</label>
                 <input type="email" id="email" name="email" required>
 
-                <label for="phone">Your phone*</label>
+                <label for="phone">Telefon*</label>
                 <input type="tel" id="phone" name="phone" required>
 
-                <label for="date">Reservation date*</label>
+                <label for="date">Datum događaja*</label>
                 <input type="date" id="date" name="date" required>
 
-                <button type="submit">Submit</button>
+                <label>Broj karata*</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="tickets1" name="tickets" value="1" required>
+                        <label for="tickets1">1 karta</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="tickets2" name="tickets" value="2">
+                        <label for="tickets2">2 karte</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="tickets3" name="tickets" value="3">
+                        <label for="tickets3">3 karte</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="tickets4" name="tickets" value="4">
+                        <label for="tickets4">4 karte</label>
+                    </div>
+                </div>
+
+                <button type="submit">Potvrdi</button>
             </form>
 
         </div>
