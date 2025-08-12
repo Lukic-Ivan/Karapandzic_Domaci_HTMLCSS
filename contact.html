@@ -12,7 +12,8 @@
     <meta name="language" content="Serbian">
     <meta name="author" content="Disco Vintage Team">
     <title>Disco Vintage</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
     <script>
         function toggleNav() {
@@ -63,7 +64,7 @@
                     <h2>Kontaktirajte nas</h2>
                     <p>Možete nas kontaktirati preko mejla ili telefona:</p>
                     <a href="mailto:support@discovintage.com">kontakt@discovintage.com</a><br>
-                    <a href="tel:+381123456789">Phone: +381 1234 56789</p>
+                    <a href="tel:+381123456789">Phone: +381 1234 56789</a>
                 </div>
 
                 <div id="location" class="content-section">
@@ -102,12 +103,8 @@
             menuLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
-
-                    // Remove active class from all links and sections
                     menuLinks.forEach(l => l.classList.remove('active'));
                     sections.forEach(s => s.classList.remove('active'));
-
-                    // Add active class to clicked link and corresponding section
                     this.classList.add('active');
                     const sectionId = this.getAttribute('data-section');
                     document.getElementById(sectionId).classList.add('active');
